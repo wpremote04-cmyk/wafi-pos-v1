@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WAFI PRINTING — Penjualan Percetakan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><img id="profileLogoPreview" class="brand-logo" src="wafilogo.png" alt="Logo WAFI Printing"><div><b>WAFI POS</b><small>Kasir & Stok Barang</small></div></div>
+    <button class="nav" data-page="laporan"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4.75A.75.75 0 0 1 4.75 4h4.5A.75.75 0 0 1 10 4.75v4.5A.75.75 0 0 1 9.25 10h-4.5A.75.75 0 0 1 4 9.25zm10 0A.75.75 0 0 1 14.75 4h4.5A.75.75 0 0 1 20 4.75v4.5A.75.75 0 0 1 19.25 10h-4.5A.75.75 0 0 1 14 9.25zm-10 10A.75.75 0 0 1 4.75 14h4.5A.75.75 0 0 1 10 14.75v4.5A.75.75 0 0 1 9.25 20h-4.5A.75.75 0 0 1 4 19.25zm10 0A.75.75 0 0 1 14.75 14h4.5A.75.75 0 0 1 20 14.75v4.5A.75.75 0 0 1 19.25 20h-4.5A.75.75 0 0 1 14 19.25z" fill="currentColor"/></svg></span> Dashboard</button>
+    <button class="nav active" data-page="kasir"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 7.5A2.5 2.5 0 0 1 8.5 5h7A2.5 2.5 0 0 1 18 7.5v8.25A2.5 2.5 0 0 1 15.5 18h-7A2.5 2.5 0 0 1 6 15.5zm2 0V6.75A.75.75 0 0 1 8.75 6h6.5A.75.75 0 0 1 16 6.75V7.5zm-1.5 5.25h10.5a.75.75 0 0 1 0 1.5H6.5a.75.75 0 1 1 0-1.5zm2.5 3.25h5.5a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1 0-1.5z" fill="currentColor"/></svg></span> Kasir</button>
+    <button class="nav" data-page="produk"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.75 4.25 6.5v11.25L12 21.5l7.75-3.75V6.5zm0 1.82 5.7 2.76-5.7 2.76-5.7-2.76zm-6.25 4.2 5.5 2.66v7.1l-5.5-2.66zm12.5 0v7.1l-5.5 2.66v-7.1z" fill="currentColor"/></svg></span> Barang &amp; Stok</button>
+    <button class="nav" data-page="transaksi"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4.75A2.75 2.75 0 0 0 4.25 7.5v9A2.75 2.75 0 0 0 7 19.25h10A2.75 2.75 0 0 0 19.75 16.5v-9A2.75 2.75 0 0 0 17 4.75zm0 1.5h10c.69 0 1.25.56 1.25 1.25v9c0 .69-.56 1.25-1.25 1.25H7A1.25 1.25 0 0 1 5.75 16.5v-9c0-.69.56-1.25 1.25-1.25zm1.5 3h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1 0-1.5zm0 3.5h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1 0-1.5zm-1.5 3.25h3.5a.75.75 0 0 1 0 1.5h-3.5a.75.75 0 0 1 0-1.5z" fill="currentColor"/></svg></span> Transaksi</button>
+    <button class="nav" data-page="pengaturan"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8.75A3.25 3.25 0 1 1 12 15.25A3.25 3.25 0 0 1 12 8.75Zm8.1 3.25-.92-.28a7.07 7.07 0 0 0-.7-1.7l.52-.78a1 1 0 0 0-.13-1.34l-1.24-1.24a1 1 0 0 0-1.34-.13l-.78.52c-.54-.3-1.1-.53-1.7-.7L13.9 4.9a1 1 0 0 0-1-.8h-1.8a1 1 0 0 0-1 .8l-.28.92c-.6.17-1.16.4-1.7.7l-.78-.52a1 1 0 0 0-1.34.13L5.76 7.37a1 1 0 0 0-.13 1.34l.52.78c-.3.54-.53 1.1-.7 1.7L4.53 11.9a1 1 0 0 0-.8 1v1.8a1 1 0 0 0 .8 1l.92.28c.17.6.4 1.16.7 1.7l-.52.78a1 1 0 0 0 .13 1.34l1.24 1.24a1 1 0 0 0 1.34.13l.78-.52c.54.3 1.1.53 1.7.7l.28.92a1 1 0 0 0 1 .8h1.8a1 1 0 0 0 1-.8l.28-.92c.6-.17 1.16-.4 1.7-.7l.78.52a1 1 0 0 0 1.34-.13l1.24-1.24a1 1 0 0 0 .13-1.34l-.52-.78c.3-.54.53-1.1.7-1.7l.92-.28a1 1 0 0 0 .8-1v-1.8a1 1 0 0 0-.8-1zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z" fill="currentColor"/></svg></span> Pengaturan</button>
+    <button class="nav" data-page="akun"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.5 11.5A3.5 3.5 0 1 1 9.5 4.5a3.5 3.5 0 0 1 0 7zm-5 7.5a5.5 5.5 0 0 1 11 0v.5H4.5zm12.75-7.5a2.75 2.75 0 1 1 0-5.5a2.75 2.75 0 0 1 0 5.5zm2.5 7.5a4.75 4.75 0 0 0-3.52-4.57 5.02 5.02 0 0 1 2.62 4.57v.5h.9zm-12.63 0v.5H19.5v-.5a4.5 4.5 0 0 0-3.55-4.33A5.03 5.03 0 0 1 17.5 11.5a4.5 4.5 0 0 0-4.5 4.5z" fill="currentColor"/></svg></span> Manajemen Akun</button>
+    <div class="sub-nav-group">
+      <button class="nav sub-nav" data-page="pelanggan"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 11a4 4 0 1 1-8 0 4 4 0 0 1 8 0zm-10 8a6 6 0 0 1 12 0H6zm14-1.5a4.5 4.5 0 0 0-2.63-4.08A5.7 5.7 0 0 1 18 19h2zm-16 0h2a5.7 5.7 0 0 1 1.63-4.58A4.5 4.5 0 0 0 4 17.5z" fill="currentColor"/></svg></span> Data Pelanggan</button>
+      <button class="nav sub-nav" data-page="aktivitas"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.75 12a7.25 7.25 0 1 1 14.5 0 7.25 7.25 0 0 1-14.5 0zm7.25-3.5h1.5v4.5h3.5v1.5h-5v-6zM12 2.75A9.25 9.25 0 1 0 21.25 12 9.26 9.26 0 0 0 12 2.75z" fill="currentColor"/></svg></span> Riwayat Aktivitas</button>
+    </div>
+    <div class="side-bottom">
+      <small>Data tersimpan otomatis di browser.</small>
+      <div id="appStatusFooter" class="app-status-footer">
+        <div><b>WAFI POS</b></div>
+        <div>versi 1.0.1
+        <div id="connectionStatusText">online</div>
+        <div id="loginBadge" class="login-badge">Belum login</div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header><div><h1 id="pageTitle">Kasir</h1><p id="clock"></p></div></header>
+
+    <section id="kasir" class="page">
+      <div class="grid2">
+        <div class="card">
+          <h2>Pesanan Baru</h2>
+          <div class="row">
+            <label>No. Pesanan<input id="orderNo" readonly></label>
+            <label>Tanggal<input id="orderDate" type="datetime-local"></label>
+          </div>
+          <div class="row">
+            <label>Nama Pelanggan<input id="customer" placeholder="Nama pelanggan" autocomplete="name" list="customerList"></label>
+            <datalist id="customerList"></datalist>
+            <label>No. HP<input id="phone" placeholder="08xxxxxxxxxx" autocomplete="tel"></label>
+          </div>
+          <div class="addline">
+            <input id="productSearch" list="productOptions" placeholder="Cari produk" autocomplete="off">
+            <datalist id="productOptions"></datalist>
+            <select id="productSelect" style="display:none"></select>
+            <input id="qty" type="number" min="1" value="1" title="Jumlah">
+            <button class="btn primary" id="addItem">+ Tambah</button>
+          </div>
+          <div class="table-wrap"><table><thead><tr><th>Item</th><th>Harga</th><th>Qty</th><th>Total</th><th></th></tr></thead><tbody id="cartBody"></tbody></table></div>
+          <label>Catatan<input id="notes" placeholder="Contoh: selesai jam 15.00, ukuran A3, laminasi..."></label>
+        </div>
+        <div class="card summary">
+          <h2>Ringkasan</h2>
+          <div class="sum"><span>Subtotal</span><b id="subtotal">Rp0</b></div>
+          <div class="sum"><span>Diskon</span><input id="discount" type="number" min="0" value="0"></div>
+          <div class="sum"><span>Total</span><b class="grand" id="grandTotal">Rp0</b></div>
+          <label>Status Pesanan
+            <select id="orderStatus">
+              <option value="Baru">Baru</option>
+              <option value="Diproses">Diproses</option>
+              <option value="Selesai">Selesai</option>
+              <option value="Ditunda">Ditunda</option>
+            </select>
+          </label>
+          <label>Pembayaran
+            <select id="payment"><option>Cash</option><option>Transfer</option><option>QRIS</option><option>Debit</option></select>
+          </label>
+          <label>DP / Uang Muka<input id="downPayment" type="number" min="0" value="0"></label>
+          <label>Uang Dibayar<input id="paid" type="number" min="0" value="0"></label>
+          <div class="sum"><span>Sisa Tagihan</span><b id="remainingBalance">Rp0</b></div>
+          <div class="sum"><span>Kembalian</span><b id="change">Rp0</b></div>
+          <button class="btn success wide" id="saveSale">💾 Simpan & Cetak Nota</button>
+          <button class="btn wide" id="clearSale">🔄 Refresh</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="produk" class="page hidden">
+      <div class="card">
+        <div class="toolbar product-toolbar">
+          <h2>Barang & Stok</h2>
+          <div class="toolbar-search">
+            <input id="searchProduct" type="search" placeholder="Cari barang..." aria-label="Cari barang">
+          </div>
+          <div class="toolbar-actions">
+            <button class="btn ghost" id="exportProductsExcel">Export Excel</button>
+            <button class="btn ghost" id="downloadProductTemplate">Download Template</button>
+            <button class="btn ghost" id="importProductsExcel">Import Excel</button>
+            <button class="btn danger" id="deleteSelectedProducts">Hapus Terpilih</button>
+            <button class="btn danger" id="deleteAllProducts">Hapus Semua</button>
+            <button class="btn primary" id="newProduct">+ Barang</button>
+          </div>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th style="width:40px"><input id="selectAllProducts" type="checkbox" aria-label="Pilih semua barang"></th><th>Kode Barang</th><th>Nama Barang</th><th>Harga Beli</th><th>Harga Jual</th><th>Stok Awal</th><th>Sisa Stok</th><th>Aksi</th></tr></thead><tbody id="productBody"></tbody></table></div>
+      </div>
+    </section>
+
+    <section id="transaksi" class="page hidden">
+      <div class="transaction-summary-grid">
+        <div class="transaction-metric"><span>Total Transaksi</span><b id="totalTransactionsMetric">0</b></div>
+        <div class="transaction-metric"><span>Penjualan</span><b id="salesMetric">Rp0</b></div>
+        <div class="transaction-metric"><span>Belum Lunas</span><b id="unpaidMetric">Rp0</b></div>
+        <div class="transaction-metric"><span>Selesai</span><b id="completedMetric">0</b></div>
+      </div>
+      <div class="card">
+        <div class="toolbar"><h2>Riwayat Transaksi</h2><div class="toolbar-actions"><button class="btn ghost" id="backupBtn">Backup Data</button><button class="btn danger" id="clearTransactions">Hapus Semua</button></div></div>
+        <input id="searchTransaction" placeholder="Cari nomor pesanan / pelanggan...">
+        <div id="transactionFilters" class="transaction-filters"></div>
+        <div class="table-wrap"><table><thead><tr><th>No</th><th>Tanggal</th><th>Pelanggan</th><th>Total</th><th>Bayar</th><th>Sisa</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="transactionBody"></tbody></table></div>
+      </div>
+    </section>
+
+    <section id="laporan" class="page hidden">
+      <div class="stats dashboard-stats">
+        <div class="stat"><small>Omzet Hari Ini</small><b id="todaySales">Rp0</b></div>
+        <div class="stat"><small>Transaksi Hari Ini</small><b id="todayCount">0</b></div>
+        <div class="stat"><small>Uang Masuk</small><b id="cashInToday">Rp0</b></div>
+        <div class="stat"><small>Belum Lunas</small><b id="unpaidToday">Rp0</b></div>
+        <div class="stat"><small>Diproses</small><b id="processingCount">0</b></div>
+        <div class="stat"><small>Selesai</small><b id="completedCount">0</b></div>
+      </div>
+      <div class="card dashboard-card">
+        <div class="toolbar"><h2>Dashboard</h2><button class="btn" id="printReport">Print Laporan</button></div>
+        <div class="chart-tabs"><button class="chart-tab active" data-range="7">7 Hari</button><button class="chart-tab" data-range="30">30 Hari</button><button class="chart-tab" data-range="month">Bulan</button></div>
+        <div class="chart-panel">
+          <canvas id="salesChart" width="900" height="220"></canvas>
+        </div>
+        <div id="reportContent" class="dashboard-panels"></div>
+      </div>
+    </section>
+
+    <section id="pengaturan" class="page hidden">
+      <div class="card settings">
+        <h2>Pengaturan Toko</h2>
+        <label>Nama Toko<input id="shopName"></label>
+        <label>Alamat<input id="shopAddress"></label>
+        <label>No. HP<input id="shopPhone"></label>
+        <label>Email<input id="shopEmail" placeholder="contoh@email.com"></label>
+        <label>Footer Nota<input id="receiptFooter"></label>
+        <label>Logo Profile<input id="profileLogoInput" type="file" accept="image/*"></label>
+        <label>Logo Invoice<input id="invoiceLogoInput" type="file" accept="image/*"></label>
+        <div class="settings-group">
+          <h3>Nota / Struk</h3>
+          <div class="checkbox-group">
+            <label class="checkbox-inline"><input id="showReceiptBarcode" type="checkbox"> Tampilkan Barcode Transaksi pada Nota</label>
+            <label class="checkbox-inline"><input id="showOrderNoBelowBarcode" type="checkbox"> Tampilkan Nomor Pesanan di bawah Barcode</label>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <h3>Tampilan Login</h3>
+          <div class="row">
+            <label>Upload Background Login<input id="loginBackgroundImageInput" type="file" accept="image/*"></label>
+            <label>Upload Logo Login<input id="loginLogoImageInput" type="file" accept="image/*"></label>
+          </div>
+          <div class="row">
+            <label>Overlay <input id="loginBackgroundOverlay" type="range" min="0" max="100" step="1" value="60"></label>
+            <label>Blur <input id="loginBackgroundBlur" type="range" min="0" max="20" step="1" value="0"></label>
+          </div>
+          <div class="row">
+            <label>Brightness <input id="loginBackgroundBrightness" type="range" min="0.6" max="1.4" step="0.05" value="1"></label>
+            <label>Warna Aksen Login <input id="loginAccentColor" type="color" value="#1db9db"></label>
+          </div>
+          <div class="settings-actions">
+            <button class="btn ghost" id="resetLoginAppearanceBtn" type="button">Reset Default</button>
+            <button class="btn primary" id="saveSettings">Simpan Pengaturan</button>
+            <button class="btn danger" id="resetData">Reset Data</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="akun" class="page hidden">
+      <div class="card settings auth-card">
+        <div class="account-header">
+          <div class="account-header-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12.25A4.75 4.75 0 1 0 12 2.75a4.75 4.75 0 0 0 0 9.5zm-7 8.25a7 7 0 0 1 14 0v.5H5zm16.5-1.5v.5h-1.5v-.5a5.25 5.25 0 0 0-3.2-4.9 5.95 5.95 0 0 1 4.7 4.9z" fill="currentColor"/></svg>
+          </div>
+          <div>
+            <h2>Manajemen Akun</h2>
+            <p>Kelola akses akun, keamanan login, dan pengaturan kata sandi Anda.</p>
+          </div>
+        </div>
+
+        <div class="account-grid">
+          <div class="account-panel">
+            <div class="panel-title">
+              <span class="panel-title-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.75A9.25 9.25 0 1 1 2.75 12 9.26 9.26 0 0 1 12 2.75zm0 1.5A7.75 7.75 0 1 0 19.75 12 7.76 7.76 0 0 0 12 4.25zm.75 2.5h-1.5v5.5h4.4v-1.5h-2.9z" fill="currentColor"/></svg>
+              </span>
+              Informasi Akun
+            </div>
+            <div class="account-info-list">
+              <div class="account-info-item">
+                <span>Username</span>
+                <strong id="accountUsernameDisplay">-</strong>
+              </div>
+              <div class="account-info-item">
+                <span>Status Akun</span>
+                <span id="accountStatusBadge" class="status-badge active">Aktif</span>
+              </div>
+            </div>
+            <div class="auth-status-row">
+              <span id="currentUserName">Login aktif: belum login</span>
+            </div>
+          </div>
+
+          <div class="account-panel">
+            <div class="panel-title">
+              <span class="panel-title-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 1.5A5.5 5.5 0 0 1 17.5 7v2.4l1.1 1.1a1.75 1.75 0 0 1 .5 1.24v4.94a1.75 1.75 0 0 1-1.75 1.75H6.65A1.75 1.75 0 0 1 4.9 16.68v-4.94a1.75 1.75 0 0 1 .5-1.24l1.1-1.1V7A5.5 5.5 0 0 1 12 1.5zm0 1.75A3.75 3.75 0 0 0 8.25 7v2.7l-1.02 1.02a.25.25 0 0 0-.08.18v4.94c0 .14.11.25.25.25h9.2a.25.25 0 0 0 .25-.25v-4.94a.25.25 0 0 0-.08-.18L15.75 9.7V7A3.75 3.75 0 0 0 12 3.25zm0 7.25a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z" fill="currentColor"/></svg>
+              </span>
+              Keamanan Akun
+            </div>
+
+            <form id="changePasswordForm" class="auth-form">
+              <div class="field-group">
+                <label for="oldPassword">Password Lama</label>
+                <div class="password-field">
+                  <input id="oldPassword" type="password" placeholder="Masukkan password lama">
+                  <button type="button" class="toggle-password" data-target="oldPassword" aria-label="Lihat password lama">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5.25c4.88 0 9 3.86 10.2 6.75-1.2 2.89-5.32 6.75-10.2 6.75S3.2 14.89 2 12c1.2-2.89 5.32-6.75 10-6.75zm0 1.5A8.42 8.42 0 0 0 4.4 12c1.35 2.02 4.34 4.25 7.6 4.25s6.25-2.23 7.6-4.25A8.42 8.42 0 0 0 12 6.75zm0 2.25A3.75 3.75 0 1 1 12 16.5a3.75 3.75 0 0 1 0-7.5zm0 1.5A2.25 2.25 0 1 0 12 15.75 2.25 2.25 0 0 0 12 10.5z" fill="currentColor"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="newPassword">Password Baru</label>
+                <div class="password-field">
+                  <input id="newPassword" type="password" placeholder="Masukkan password baru">
+                  <button type="button" class="toggle-password" data-target="newPassword" aria-label="Lihat password baru">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5.25c4.88 0 9 3.86 10.2 6.75-1.2 2.89-5.32 6.75-10.2 6.75S3.2 14.89 2 12c1.2-2.89 5.32-6.75 10-6.75zm0 1.5A8.42 8.42 0 0 0 4.4 12c1.35 2.02 4.34 4.25 7.6 4.25s6.25-2.23 7.6-4.25A8.42 8.42 0 0 0 12 6.75zm0 2.25A3.75 3.75 0 1 1 12 16.5a3.75 3.75 0 0 1 0-7.5zm0 1.5A2.25 2.25 0 1 0 12 15.75 2.25 2.25 0 0 0 12 10.5z" fill="currentColor"/></svg>
+                  </button>
+                </div>
+                <div class="password-helper">Minimal 4 karakter. Disarankan kombinasi huruf, angka, dan simbol.</div>
+                <div class="password-strength" aria-live="polite">
+                  <div class="strength-header">
+                    <span>Kekuatan Password</span>
+                    <span id="passwordStrengthText" class="strength-status">Belum diisi</span>
+                  </div>
+                  <div class="strength-bar"><span id="passwordStrengthBar"></span></div>
+                </div>
+              </div>
+
+              <div class="field-group confirm-field">
+                <label for="confirmPassword">Konfirmasi Password Baru</label>
+                <div class="password-field">
+                  <input id="confirmPassword" type="password" placeholder="Ulangi password baru">
+                  <button type="button" class="toggle-password" data-target="confirmPassword" aria-label="Lihat konfirmasi password baru">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5.25c4.88 0 9 3.86 10.2 6.75-1.2 2.89-5.32 6.75-10.2 6.75S3.2 14.89 2 12c1.2-2.89 5.32-6.75 10-6.75zm0 1.5A8.42 8.42 0 0 0 4.4 12c1.35 2.02 4.34 4.25 7.6 4.25s6.25-2.23 7.6-4.25A8.42 8.42 0 0 0 12 6.75zm0 2.25A3.75 3.75 0 1 1 12 16.5a3.75 3.75 0 0 1 0-7.5zm0 1.5A2.25 2.25 0 1 0 12 15.75 2.25 2.25 0 0 0 12 10.5z" fill="currentColor"/></svg>
+                  </button>
+                </div>
+                <div id="confirmPasswordHint" class="password-match-hint">Masukkan ulang password baru untuk konfirmasi.</div>
+              </div>
+
+              <div class="account-action-row">
+                <button class="btn primary" type="submit">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 1.5a5.5 5.5 0 0 1 5.5 5.5v1.7h.9A2.9 2.9 0 0 1 21.3 11.6v7.5a2.9 2.9 0 0 1-2.9 2.9H5.6a2.9 2.9 0 0 1-2.9-2.9v-7.5a2.9 2.9 0 0 1 2.9-2.9h.9V7A5.5 5.5 0 0 1 12 1.5zm0 1.75A3.75 3.75 0 0 0 8.25 7v1.7h7.5V7A3.75 3.75 0 0 0 12 3.25zm-4.75 8.95v5.2a1.15 1.15 0 0 0 1.15 1.15h7.2a1.15 1.15 0 0 0 1.15-1.15v-5.2z" fill="currentColor"/></svg>
+                  Ganti Password
+                </button>
+              </div>
+            </form>
+
+            <div class="account-secondary-actions">
+              <button class="btn ghost" type="button" id="logoutBtn">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.5 4.75h8.75A1.75 1.75 0 0 1 20 6.5v11A1.75 1.75 0 0 1 18.25 19.25H9.5a.75.75 0 0 1 0-1.5h8.75a.25.25 0 0 0 .25-.25v-11a.25.25 0 0 0-.25-.25H9.5a.75.75 0 0 1 0-1.5zm-4.8 4.67a.75.75 0 0 1 1.06 0l2.97 2.97a.75.75 0 0 1 .22.53v.06a.75.75 0 0 1-.22.53l-2.97 2.97a.75.75 0 0 1-1.06-1.06l1.72-1.72H4.25a.75.75 0 0 1 0-1.5h2.17L4.7 10.48a.75.75 0 0 1 0-1.06z" fill="currentColor"/></svg>
+                Logout
+              </button>
+            </div>
+
+            <div class="danger-zone">
+              <button class="btn danger" type="button" id="resetDefaultAccountBtn">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.75a9.25 9.25 0 1 1-9.25 9.25A9.26 9.26 0 0 1 12 2.75zm0 1.5a7.75 7.75 0 1 0 7.75 7.75A7.76 7.76 0 0 0 12 4.25zm2.4 4.5-5.1 5.1 1.06 1.06 5.1-5.1zm-5.1 0L9.36 9.81l-1.06 1.06L8.34 8.75z" fill="currentColor"/></svg>
+                Reset Akun Default
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pelanggan" class="page hidden">
+      <div class="card settings auth-card">
+        <div class="account-header">
+          <div class="account-header-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 11a4 4 0 1 1-8 0 4 4 0 0 1 8 0zm-10 8a6 6 0 0 1 12 0H6zm14-1.5a4.5 4.5 0 0 0-2.63-4.08A5.7 5.7 0 0 1 18 19h2zm-16 0h2a5.7 5.7 0 0 1 1.63-4.58A4.5 4.5 0 0 0 4 17.5z" fill="currentColor"/></svg>
+          </div>
+          <div>
+            <h2>Data Pelanggan</h2>
+            <p>Daftar pelanggan yang pernah bertransaksi.</p>
+          </div>
+        </div>
+        <div class="table-wrap compact-table">
+          <table>
+            <thead>
+              <tr>
+                <th>No. Pesanan</th>
+                <th>Nama</th>
+                <th>Telp</th>
+                <th>Nilai</th>
+                <th>Terakhir</th>
+              </tr>
+            </thead>
+            <tbody id="customerDirectoryBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="aktivitas" class="page hidden">
+      <div class="card settings auth-card">
+        <div class="account-header">
+          <div class="account-header-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.75 12a7.25 7.25 0 1 1 14.5 0 7.25 7.25 0 0 1-14.5 0zm7.25-3.5h1.5v4.5h3.5v1.5h-5v-6zM12 2.75A9.25 9.25 0 1 0 21.25 12 9.26 9.26 0 0 0 12 2.75z" fill="currentColor"/></svg>
+          </div>
+          <div>
+            <h2>Riwayat Aktivitas Pengguna</h2>
+            <p>Catatan aktivitas login, pengaturan, dan transaksi pengguna.</p>
+          </div>
+        </div>
+        <div id="userActivityList" class="activity-list"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="authOverlay" class="auth-overlay">
+  <div class="auth-box">
+    <div class="auth-main">
+      <div class="auth-main-header">
+        <h2>Login Page</h2>
+        <p>Silakan Login</p>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <div class="field-group">
+          <label for="loginUsername">Username</label>
+          <div class="input-with-icon">
+            <span class="input-icon">👤</span>
+            <input id="loginUsername" type="text" placeholder="Masukkan username" autocomplete="username" required>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="loginPassword">Password</label>
+          <div class="input-with-icon password-field">
+            <span class="input-icon">🔒</span>
+            <input id="loginPassword" type="password" placeholder="Masukkan password" autocomplete="current-password" required>
+            <button type="button" class="toggle-password" data-target="loginPassword" aria-label="Lihat password">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5.25c4.88 0 9 3.86 10.2 6.75-1.2 2.89-5.32 6.75-10.2 6.75S3.2 14.89 2 12c1.2-2.89 5.32-6.75 10-6.75zm0 1.5A8.42 8.42 0 0 0 4.4 12c1.35 2.02 4.34 4.25 7.6 4.25s6.25-2.23 7.6-4.25A8.42 8.42 0 0 0 12 6.75zm0 2.25A3.75 3.75 0 1 1 12 16.5a3.75 3.75 0 0 1 0-7.5zm0 1.5A2.25 2.25 0 1 0 12 15.75 2.25 2.25 0 0 0 12 10.5z" fill="currentColor"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="loginError" class="login-error hidden">⚠ Username atau password tidak sesuai.</div>
+
+        <button class="btn primary auth-submit" type="submit">
+          <span class="btn-label">LOGIN</span>
+          <span class="btn-spinner hidden" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+
+    <div class="auth-side">
+      <img class="auth-side-logo" src="wafilogo.png" alt="Logo WAFI Printing">
+      <div class="auth-side-brand">APLIKASI KASIR</div>
+      <div class="cashier-scene" aria-hidden="true">
+        <div class="cashier-figure">
+          <div class="head"></div>
+          <div class="body"></div>
+          <div class="arm arm-left"></div>
+          <div class="arm arm-right"></div>
+          <div class="hand hand-left"></div>
+          <div class="hand hand-right"></div>
+        </div>
+        <div class="cashier-counter">
+          <div class="counter-top"></div>
+          <div class="cashier-screen"></div>
+          <div class="counter-front"></div>
+        </div>
+      </div>
+      <p>Silahkan login dengan akun anda</p>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<input id="excelImportInput" type="file" accept=".xlsx,.xls,.csv" class="hidden">
+
+<div id="modal" class="modal hidden"><div class="modal-box"><h2 id="modalTitle">Barang</h2><input id="pCode" placeholder="Kode barang"><input id="pName" placeholder="Nama barang"><input id="pBuyPrice" type="number" placeholder="Harga beli"><input id="pSellPrice" type="number" placeholder="Harga jual"><input id="pStock" type="number" placeholder="Stok awal"><div class="modal-actions"><button class="btn" id="modalCancel">Batal</button><button class="btn primary" id="modalSave">Simpan</button></div></div></div>
+
+<div id="transactionEditModal" class="modal hidden"><div class="modal-box"><h2>Edit Transaksi</h2><label>No. Pesanan<input id="editTransactionNo" readonly></label><label>Pelanggan<input id="editTransactionCustomer"></label><label>Total<input id="editTransactionTotal" type="number" min="0"></label><label>Bayar<input id="editTransactionPaid" type="number" min="0"></label><label>Sisa<input id="editTransactionRemaining" type="number" min="0"></label><label>Status<select id="editTransactionStatus"><option value="Baru">Baru</option><option value="Diproses">Diproses</option><option value="Selesai">Selesai</option><option value="Ditunda">Ditunda</option></select></label><div class="modal-actions"><button class="btn" id="transactionEditCancel">Batal</button><button class="btn primary" id="transactionEditSave">Simpan</button></div></div></div>
+
+<div id="importSheetModal" class="modal hidden">
+  <div class="modal-box import-modal-box">
+    <h2 id="importModalTitle">Preview Data Excel</h2>
+    <div id="importValidationSummary" class="import-summary"></div>
+    <div class="table-wrap import-preview-wrap">
+      <table>
+        <thead>
+          <tr><th>Kode</th><th>Nama Barang</th><th>Harga Beli</th><th>Harga Jual</th><th>Stok Awal</th></tr>
+        </thead>
+        <tbody id="importPreviewBody"></tbody>
+      </table>
+    </div>
+    <ul id="importErrorList" class="import-error-list hidden"></ul>
+    <div class="modal-actions">
+      <button class="btn" id="importPreviewCancel">Batal</button>
+      <button class="btn primary" id="importConfirmBtn">Import Data</button>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
